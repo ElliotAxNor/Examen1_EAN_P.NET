@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Examen_1
-{
-    internal class Tirada
+namespace Examen_1.Elementos_juego
+{ 
+	internal class Tirada
     {
 		int numero_tirada;
 

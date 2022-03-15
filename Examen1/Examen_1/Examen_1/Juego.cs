@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Examen_1.Elementos_juego;
 namespace Examen_1
 {
     internal class Juego
@@ -28,15 +28,7 @@ namespace Examen_1
 			int opcion_principal = 1;
 			while (opcion_principal != 8)
 			{
-				Console.WriteLine("----------------JUEGO----------------");
-				Console.WriteLine("1.- Ver cuanto dinero tienes.");
-				Console.WriteLine("2.- Apostar a un numero especifico.");
-				Console.WriteLine("3.- Apostar a un numero extremo.");
-				Console.WriteLine("4.- Apostar a un numero medio.");
-				Console.WriteLine("5.- Apostar a un numero par.");
-				Console.WriteLine("6.- Apostar a un numero impar.");
-				Console.WriteLine("7.- Ver estadisticas.");
-				Console.WriteLine("8.- Salir juego.");
+				mostrarMenuPrincipal();
 				Console.Write("Ingresa opcion: ");
 				opcion_principal = int.Parse(Console.ReadLine());
 				while (opcion_principal <= 0 || opcion_principal > 8)
@@ -49,9 +41,7 @@ namespace Examen_1
                 if (opcion_principal == 1)
                 {
 					jugador.mostrarDinero();
-                }
-
-				if (opcion_principal >= 2 && opcion_principal <= 6)
+                }else if (opcion_principal >= 2 && opcion_principal <= 6)
 				{
 					int cantidad = pedirCantidadDineroApuesta();
 
@@ -89,24 +79,12 @@ namespace Examen_1
 						agregarTirada(tirada);
 
 					}
-				}
-
-
-				if (opcion_principal == 7)
+				}else if (opcion_principal == 7)
                 {
 					int opcion_estadistica = 1;
                     while (opcion_estadistica != 9)
                     {
-						Console.WriteLine("------------ESTADISTICAS-------------");
-						Console.WriteLine("1.- Balance.");
-						Console.WriteLine("2.- Cantidad de tiradas realizadas.");
-						Console.WriteLine("3.- Numero que mas veces se ha tirado.");
-						Console.WriteLine("4.- Numero que menos veces se ha tirado.");
-						Console.WriteLine("5.- Cantidad de resultados extremos.");
-						Console.WriteLine("6.- Cantidad de resultados medios.");
-						Console.WriteLine("7.- Cantidad de resultados pares.");
-						Console.WriteLine("8.- Cantidad de resultados impares.");
-						Console.WriteLine("9.- Salir estadisticas.");
+						mostrarMenuEstadisticas();
 						Console.Write("Ingresa opcion: ");
 						opcion_estadistica = int.Parse(Console.ReadLine());
 						while (opcion_estadistica <= 0 || opcion_principal > 9)
@@ -152,14 +130,12 @@ namespace Examen_1
 							Console.WriteLine("Has salido de las estadisticas");
                         }
 					}
-                }
-
-				
-                if (opcion_principal == 8)
+                }else if(opcion_principal == 8)
                 {
 					Console.WriteLine("Has salido por tu cuenta");
                 }
-                if (jugador.getDinero() == 0)
+				
+				if (jugador.getDinero() == 0)
                 {
 					opcion_principal = 8;
 					Console.WriteLine("El jugador se ha quedado sin dinero");
@@ -170,6 +146,34 @@ namespace Examen_1
 			jugador.mostrarDineroGanado();
 			jugador.mostrarDineroPerdido();
 		}
+
+		public void mostrarMenuPrincipal()
+        {
+			Console.WriteLine("------------------JUEGO------------------");
+			Console.WriteLine("1.- Ver cuanto dinero tienes.");
+			Console.WriteLine("2.- Apostar a un numero especifico.");
+			Console.WriteLine("3.- Apostar a un numero extremo.");
+			Console.WriteLine("4.- Apostar a un numero medio.");
+			Console.WriteLine("5.- Apostar a un numero par.");
+			Console.WriteLine("6.- Apostar a un numero impar.");
+			Console.WriteLine("7.- Ver estadisticas.");
+			Console.WriteLine("8.- Salir juego.");
+		}
+
+		public void mostrarMenuEstadisticas()
+        {
+			Console.WriteLine("--------------ESTADISTICAS---------------");
+			Console.WriteLine("1.- Balance.");
+			Console.WriteLine("2.- Cantidad de tiradas realizadas.");
+			Console.WriteLine("3.- Numero que mas veces se ha tirado.");
+			Console.WriteLine("4.- Numero que menos veces se ha tirado.");
+			Console.WriteLine("5.- Cantidad de resultados extremos.");
+			Console.WriteLine("6.- Cantidad de resultados medios.");
+			Console.WriteLine("7.- Cantidad de resultados pares.");
+			Console.WriteLine("8.- Cantidad de resultados impares.");
+			Console.WriteLine("9.- Salir estadisticas.");
+		}
+
 
 		public int lanzarDados()
 		{
@@ -528,13 +532,13 @@ namespace Examen_1
 				}
 				if (contador == 0)
 				{
-					Console.WriteLine("No hay resultados estremos.");
+					Console.WriteLine("No hay resultados extremos.");
 
 
 				}
 				else
 				{
-					Console.WriteLine("La cantidad de resultados estremos es de " + contador);
+					Console.WriteLine("La cantidad de resultados extremos es de " + contador);
 				}
 			}
 		}
