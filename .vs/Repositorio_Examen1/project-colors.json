@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "26ecee50-ccef-4b32-bec7-62565ce19639": {
+      "ProjectGuid": "26ecee50-ccef-4b32-bec7-62565ce19639",
+      "DisplayName": "Examen_v1",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Archivos varios",
+      "ColorIndex": -1
+    },
+    "1494ce27-b2cd-43f8-933f-5d15358476a3": {
+      "ProjectGuid": "1494ce27-b2cd-43f8-933f-5d15358476a3",
+      "DisplayName": "Examen",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
